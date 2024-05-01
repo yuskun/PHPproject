@@ -31,7 +31,7 @@ html,body{
 .icon{
     margin-left:8% ;
     height: 40%;
-    width: 7%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     background-color:rgb(143, 171, 56);
 
