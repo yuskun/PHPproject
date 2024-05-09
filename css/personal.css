@@ -1,0 +1,105 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.content{
+    margin:5% auto;
+    width: 45vw;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+.personal{
+    margin: 2%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(175, 171, 171);
+}
+.inform{
+    margin: 2%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(175, 171, 171);
+   
+}
+.private{
+    margin: 2%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(175, 171, 171);
+   
+
+}
+.title{
+    display: flex;
+    flex-direction: row;
+
+}
+.text{
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: rgb(76, 88, 41);
+
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    font-size: large;
+    font-weight: 600;
+    height: 10%;
+}
+input{
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: x-large;
+    outline-color: rgb(143, 171, 56);
+}
+
+.list{
+    width: 8%;
+}
+.itemname{
+    width:25%;
+    display: flex;
+    align-items: center;
+    font-size: 1vw;
+    
+}
+.clue{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+   background-color:  rgb(76, 88, 41);
+   width: 15%;
+   height: 100%;
+   color: white;
+   font-size: 100%;
+   border-radius: 1rem;
+}
+.itemlist{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: height 0.3s ease;
+    overflow: hidden;
+}
+#personalBOX{
+    height: 40vh;
+
+}
