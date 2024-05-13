@@ -1,0 +1,105 @@
+.msg_body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(250, 253, 238);
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+
+.big_send {
+    width: 70vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.border_img {
+    width: 20%;
+}
+
+.send {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    resize: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 246);
+    border: solid 2px;
+}
+
+.input:hover {
+    background-color: rgb(255, 255, 255);
+}
+.big_comment{
+    width: 70vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.comment {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(237, 243, 214);
+}
+
+.comment_time {
+    
+    font-size: smaller;
+    margin-top: 10px;
+}
+.send_text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(82, 96, 41);
+    color: white;
+    border: solid 2px white;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: rgb(250, 253, 238);
+    color: black;
+    border: solid 2px rgb(0, 0, 0);
+
+}
