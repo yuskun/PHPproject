@@ -1,0 +1,76 @@
+.crouse_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial;
+    background-color: rgba(250,253,238);
+    margin: 10% 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    background-color: rgb(243,249,213);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    
+}
+
+.item_name th {
+    background-color: rgb(82, 96, 41);
+    color:white;
+    
+}
+thead{
+    border-radius: 20px;
+    
+}
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+
+}
+
+tr {
+    color: rgb(122, 135, 84);
+}
+
+.a {
+    display: flex;
+    align-items: center;
+    width: 80%;   
+}
+.progress-bar{
+    flex: 40%;
+    height: 5px;
+    background-color: rgb(253,219,231);
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+.progress_text{
+    flex: 20%;
+    text-align: left;
+    padding-left: 5px;
+}
+.progress {
+    width: 100%; 
+    height: 100%;
+    background-color: rgb(226,125,165);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+tr:hover {
+    background-color: rgb(250,253,238); 
+    color: rgb(47, 46, 46);
+}
+.title {
+    font-size: 24px;
+    width: 60%;
+    color: rgb(74,87,34);
+    
+}
