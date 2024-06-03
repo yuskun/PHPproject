@@ -1,4 +1,8 @@
 
+CREATE DATABASE edsustain;
+
+USE edsustain;
+
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     account VARCHAR(50) NOT NULL UNIQUE,
@@ -32,6 +36,7 @@ CREATE TABLE PrivacySettings (
 -- 建立 Courses 表格
 CREATE TABLE Courses (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    category INT,
     course_name VARCHAR(100) NOT NULL,
     course_author VARCHAR(100) NOT NULL
 );
@@ -64,5 +69,3 @@ CREATE TABLE comments (
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
-INSERT INTO UserCourses (user_id, course_id, progress, assignments_grades)
-VALUES (1, 1, 50, '[{"assignment_id": 1, "grade": 85, "percentage": 20}, {"assignment_id": 2, "grade": 90, "percentage": 30}]');
