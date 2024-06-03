@@ -1,3 +1,7 @@
+<?php 
+session_start(); // 啟動會話
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,14 @@
 
 <body>
   <?php
-  include "../html/nav.html";
+  include "../php/nav.php";
   ?>
   <?php
-    include "../html/course.html";
+   if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('未登錄'); window.location.href='../html/login.html';</script>";
+    exit();
+}
+    include "../php/Score_Calculate.php";
   ?> 
     
   <?php

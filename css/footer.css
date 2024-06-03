@@ -3,6 +3,7 @@ body {
 }
 
 .footer {
+  margin-top: 10%;
   height: 15rem;
   padding: 0 225px;
   background-color: hsl(77, 47%, 6%);

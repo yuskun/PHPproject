@@ -1,3 +1,7 @@
+<?php 
+session_start(); // 啟動會話
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +13,10 @@
 
 <body>
   <?php
-  include "../html/nav.html";
+  include "../php/nav.php";
   ?>
   <?php
-    include "../html/personal.html";
+    include "../php/Lesson_Search.php";
   ?> 
     
   <?php

@@ -1,3 +1,27 @@
+<?php
+include "../php/ConnectDB.php";
+
+if (!isset($_SESSION['user_id'])) {
+    echo "請先登錄。";
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+// 查询用户的所有通知
+$sql = "SELECT id, message FROM notifications WHERE user_id = ? ORDER BY created_at DESC";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$notifications = [];
+while ($row = $result->fetch_assoc()) {
+    $notifications[$row['id']] = $row['message'];  // 使用通知的實際ID作為鍵
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,13 +119,23 @@
               d="M34.0064 29.3367C34.0064 30.4419 34.9024 31.3379 36.0076 31.3379C36.7445 31.3379 37.3418 31.9352 37.3418 32.6721C37.3418 33.4089 36.7445 34.0062 36.0076 34.0062H11.9926C11.2558 34.0062 10.6584 33.4089 10.6584 32.6721C10.6584 31.9352 11.2558 31.3379 11.9926 31.3379C13.0979 31.3379 13.9939 30.4419 13.9939 29.3367V22.8499C13.8347 17.6152 17.5168 13.0464 22.6659 12.0899V9.32416C22.6659 8.58732 23.2633 7.98999 24.0001 7.98999C24.737 7.98999 25.3343 8.58732 25.3343 9.32416V12.0899C30.4834 13.0464 34.1655 17.6152 34.0064 22.8499V29.3367ZM21.0169 36.0075H26.9833C27.1533 36.0066 27.2964 36.1346 27.3142 36.3037C27.3287 36.4268 27.3359 36.5506 27.3355 36.6746C27.3355 38.5167 25.8422 40.01 24.0001 40.01C22.158 40.01 20.6647 38.5167 20.6647 36.6746C20.6644 36.5506 20.6715 36.4268 20.686 36.3037C20.705 36.1352 20.8474 36.0078 21.0169 36.0075Z"
               fill="currentColor" />
           </svg>
-          <span class="notification-count">3</span>
+          <span class="notification-count"><?php echo count($notifications)  ?></span>
         </div>
-          <div class="notificationWindowAlert" id="notificationWindowAlert">
-            <div class="title">通知</div>
-            <p>您有一條新的訊息</p>
-            <p>系統更新已完成</p>
-          </div>
+        <div class="notificationWindowAlert" id="notificationWindowAlert">
+    <div class="title">通知</div>
+    <?php if (empty($notifications)): ?>
+        <p>目前沒有新通知。</p>
+    <?php else: ?>
+        <?php foreach ($notifications as $notification_id => $notification): ?>
+            <div id="notification-<?php echo $notification_id; ?>">
+                <p>
+                    <?php echo htmlspecialchars($notification); ?>
+                    <button class="delete-button" onclick="deleteNotification(<?php echo $notification_id; ?>)">×</button>
+                </p>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
 
       </div>
 

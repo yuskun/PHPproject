@@ -1,1 +1,5 @@
-const about=document.querySelector('#about');
+function ToLogin() {
+    window.location.href = "../View/Login.php";
+
+}
+
