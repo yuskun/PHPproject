@@ -24,21 +24,22 @@ html,body{
     position: relative;
     width: 30%;
     height: 100%;
-    background-color: rgb(223, 231, 211);
+    background-color: rgb(249, 251, 239);
     display: flex;
     justify-content: center;
     align-items: center;
     left: 0%;
-    transition: left 0.5s ease-in-out;
+    box-shadow: 0 0 2rem rgba(73, 89, 32, 1);
+    transition: left 0.75s cubic-bezier(.35,1.45,.75,1);
 
 }
 .login{
-    width: 80%;
-    height:50%;
+    width: 70%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.5rem;
 
 }
 .LOGO{
@@ -46,11 +47,11 @@ html,body{
     width: 10%;
     display: flex;
     height: 15%;
-    flex-direction: row;    
+    flex-direction: row;
     align-items: center;
     left: 12%;
     top: 8%;
-    z-index: 5;
+    z-index: 99;
 
 }
 .icon{
@@ -74,44 +75,54 @@ html,body{
 .titleEnglish{
     font-family: "Inter", sans-serif;
     font-weight: 1000;
-    
 }
 .Login_Resgister{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 70%;
-    
-
-
+    width: 100%;
 }
 .item{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    height: 20%;
-
-}
-input{
+    justify-content: space-between;
     width: 100%;
-    height: 50%;
-    border-radius: 20px;
-    border-color: rgb(73, 89, 32);
-    outline: none; /* 移除預設的藍色邊框 */
+    height: 5rem;
+    transition: all 0.5s ease-in-out;
+}
+.itemToggle {
+    height: 0;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    user-select: none;
+    visibility: hidden;
+    /* display: none; */
+}
 
-    
+input{
+    height: 3rem;
+    border: none;
+    background-color: rgba(249, 251, 239, 128);
+    border-radius: 1rem;
+    outline-style: solid;
+    outline-width: 0.15rem;
+    outline-color: rgb(73, 89, 32);
+    box-shadow: 0 0 0.5rem rgba(73, 89, 32, 0.2);
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+    transition: all 0.2s ease-in-out;
 }
 input:focus {
-    border-color: rgb(236, 137, 181);
-    outline: none; /* 移除預設的藍色邊框 */
-    box-shadow: 0 0 10px rgb(236, 137, 181);
+    outline-color: rgb(236, 137, 181);
+    box-shadow: 0 0 1rem rgba(236, 137, 181,0.7);
+    transition: all 0.2s ease-in-out;
 }
-button{
-    width: 70%;
-    height: 10%;
+.login_btn{
+    width: 100%;
+    height: 3.5rem;
     border-radius: 20px;
     font-size: 1.5rem;
-
+    font-weight: bold;
     background-color: rgb(236, 137, 181);
     color: rgb(249, 251, 239);
     display: flex;
@@ -119,39 +130,11 @@ button{
     justify-content: center;
 }
 label{
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
 }
 h1{
-     font-size: 2rem;
-}
+    font-size: 2rem;
+    transition: color 0.5s ease-in-out;
 
-.bounce-horizontal {
-    animation: bounce-horizontal 0.5s;
-}
-.bounce-horizontal-reverse {
-    animation: bounce-horizontal-reverse 0.5s;
-}
-
-@keyframes bounce-horizontal {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(-30px);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-@keyframes bounce-horizontal-reverse {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(30px);
-    }
-    100% {
-        transform: translateX(0);
-    }
 }

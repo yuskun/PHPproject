@@ -1,6 +1,68 @@
-CREATE TABLE users (
+
+CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    userid VARCHAR(50) NOT NULL UNIQUE,
-    course VARCHAR(50) NOT NULL UNIQUE,
-    program VARCHAR(255) NOT NULL,
+    account VARCHAR(50) NOT NULL UNIQUE,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15),
+    address TEXT,
+    profile_picture VARCHAR(255)
 );
+
+
+CREATE TABLE NotificationSettings (
+    user_id INT,
+    email_notifications BOOLEAN DEFAULT FALSE,
+    promotional_emails BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (user_id),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+
+CREATE TABLE PrivacySettings (
+    user_id INT,
+    show_courses BOOLEAN DEFAULT FALSE,
+    show_email BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (user_id),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+-- 建立 Courses 表格
+CREATE TABLE Courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    course_author VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE UserCourses (
+    user_id INT,
+    course_id INT,
+    assignments_grades JSON,
+    progress INT DEFAULT 0,
+    PRIMARY KEY (user_id, course_id),
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (course_id) REFERENCES Courses(id)
+);
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    course_id INT NOT NULL,
+    comment TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (course_id) REFERENCES courses(id)
+);
+
+INSERT INTO UserCourses (user_id, course_id, progress, assignments_grades)
+VALUES (1, 1, 50, '[{"assignment_id": 1, "grade": 85, "percentage": 20}, {"assignment_id": 2, "grade": 90, "percentage": 30}]');
