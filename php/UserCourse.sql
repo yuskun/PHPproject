@@ -69,3 +69,8 @@ CREATE TABLE comments (
     FOREIGN KEY (course_id) REFERENCES courses(id)
 );
 
+INSERT INTO Courses (category, course_name, course_author)
+VALUES 
+(1, '網美義大利麵的秘訣！42號混凝土與帕瑪森的完美交織', '元智資傳 Fred'),
+(2, '這才叫真正的調色！Photoshop 與 Davinci Resolve 的調色協作', '總統府拖地工'),
+(2, 'Godot 遊戲引擎入門：從 2D 到 3D 的 Unity 刻星', '小李飛刀飛啊飛');
