@@ -135,7 +135,9 @@ body {
   aspect-ratio: 1/1;
   height: 50%;
   border-radius: 50%;
-  background-color: rgb(135, 174, 11);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .categoryButton {
   position: relative;

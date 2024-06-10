@@ -114,7 +114,8 @@ $conn->close();
                 </div>
                 <div class="avatar">
                     <img src="<?php echo htmlspecialchars($user['profile_picture'] ?: '../image/web_img.png'); ?>" id="avatarImage" alt="Avatar">
-                    <input type="file" id="avatarInput" name="profile_picture" accept="image/*" onchange="previewAvatar()">
+                    <input type="file" id="avatarInput" name="profile_picture"  accept=".jpg,.jpeg" onchange="previewAvatar()">
+                    <input type="hidden" id="profile_picture_base64" name="profile_picture_base64" value="<?php echo htmlspecialchars($user['profile_picture']); ?>">
                     <label for="avatarInput">更換大頭貼</label>
                 </div>
                 <div class="inform">

@@ -17,6 +17,12 @@
 <body>
     <div class="container">
         <div class="carousel">
+            <div class="pictureControl">
+                <div class="picture" style="background-color: antiquewhite;"></div>
+                <div class="picture" style="background-color: aqua;"> </div>
+                <div class="picture" style="background-color: rgb(125, 89, 42);"></div>
+            </div>
+
             <button class="arrow left">&lt;</button>
             <div class="carousel-indicators">
                 <div class="indicator-wrapper">
@@ -27,7 +33,7 @@
             </div>
             <button class="arrow right">&gt;</button>
         </div>
-       <div class="item" id="extra">
+        <div class="item" id="extra">
             <div class="title">
                 <div class="title_text" style="color: rgb(76, 88, 41);">最新上線</div>
                 <div class="more_info"></div>
@@ -46,7 +52,7 @@
                 <div class="card"></div>
                 <div class="card-title">Godot 遊戲引擎入門：從 2D 到 3D 的 Unity 劍星</div>
                 <div class="card-author">by 小李飛刀飛啊飛</div>
-            </div> 
+            </div>
         </div>
         <div class="item" id="extra">
             <div class="title">
@@ -71,8 +77,44 @@
         </div>
     </div>
     </div>
-           
+
 </body>
+<script>
+    const pictureControl = document.querySelector('.pictureControl');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentIndex = 0;
+        const indicators = document.querySelectorAll('.indicator');
+        const totalIndicators = indicators.length;
+
+        function updateCarousel(index) {
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            pictureControl.style.left = `-${index * 100}%`;
+        }
+
+        document.querySelector('.arrow.left').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalIndicators - 1 : currentIndex - 1;
+            updateCarousel(currentIndex);
+        });
+
+        document.querySelector('.arrow.right').addEventListener('click', () => {
+            currentIndex = (currentIndex === totalIndicators - 1) ? 0 : currentIndex + 1;
+            updateCarousel(currentIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(currentIndex);
+            });
+        });
+
+
+        updateCarousel(currentIndex);
+    });
+</script>
 
 
 
