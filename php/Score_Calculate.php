@@ -8,7 +8,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-
 $sql = "SELECT course_id, assignments_grades, progress FROM usercourses WHERE user_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
@@ -21,13 +20,14 @@ while ($row = $result->fetch_assoc()) {
 }
 
 $course_names = [];
+$course_addresses = [];
 if (!empty($courses)) {
     // 查找所有課程的名稱
     $course_ids = array_column($courses, 'course_id');
     $placeholders = implode(',', array_fill(0, count($course_ids), '?'));
     $types = str_repeat('i', count($course_ids));
 
-    $sql = "SELECT id, course_name FROM courses WHERE id IN ($placeholders)";
+    $sql = "SELECT id, course_name, course_address FROM courses WHERE id IN ($placeholders)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param($types, ...$course_ids);
     $stmt->execute();
@@ -35,6 +35,7 @@ if (!empty($courses)) {
 
     while ($row = $result->fetch_assoc()) {
         $course_names[$row['id']] = $row['course_name'];
+        $course_addresses[$row['id']] = $row['course_address'];
     }
 }
 
@@ -63,7 +64,7 @@ $conn->close();
             </thead>
             <tbody>
                 <?php foreach ($courses as $course): ?>
-                <tr>
+                <tr onclick="window.location.href='<?php echo htmlspecialchars($course_addresses[$course['course_id']]); ?>'">
                     <td><?php echo htmlspecialchars($course_names[$course['course_id']] ?? '未知課程'); ?></td>
                     <td>
                         <div class="a">
@@ -80,7 +81,10 @@ $conn->close();
                         if (json_last_error() !== JSON_ERROR_NONE) {
                             echo "解析成績時出錯: " . json_last_error_msg();
                         } else {
-                            $average_grade = is_array($grades) ? array_sum($grades) / count($grades) : 0;
+                            $average_grade = 0;
+                            if (is_array($grades) && !empty($grades)) {
+                                $average_grade = array_sum($grades) / count($grades);
+                            }
                             echo htmlspecialchars(number_format($average_grade, 2));
                         }
                         ?>

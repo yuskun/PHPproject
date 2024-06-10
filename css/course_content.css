@@ -1,0 +1,183 @@
+.course_content_body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(249, 251, 239);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.sidebar {
+    border-radius: 1rem;
+    width: 8%;
+    height: 30%;
+    background-color: rgb(249, 251, 239);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.content {
+    width: 75%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4caf50;
+    font-weight: bold;
+    padding-bottom: 5px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #388e3c;
+    border-bottom: 2px solid #388e3c;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content a {
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: rgb(253, 219, 231);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 5px;
+    background-color: rgb(226, 125, 165);
+    border-radius: 10px;
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+details summary {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 85%;
+    margin: 10px;
+}
+
+.file-item .file-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.file-item .file-status {
+    font-size: 14px;
+    color: green;
+}
+
+.file-item button {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.test_item {
+    margin: 20px;
+}
+
+.score_container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+.score_content {
+    padding: 20px;
+}
+
+.course_name {
+    margin-bottom: 20px;
+}
+
+
+.section {
+    margin-top: 10px;
+}
+
+.section-header {
+    background-color: #fdffdd;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sum_content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sum_content.header-row {
+    font-weight: bold;
+    background-color: rgb(246, 251, 222);
+}
+
+.rank1 {
+    background-color: #eff7dd;
+}
+
+.sum_content div {
+    text-align: center;
+}

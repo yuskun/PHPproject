@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學習網站</title>
+    <link rel="stylesheet" href="../css/course_content.css">
+    
+</head>
+
+<body>
+    <div class="course_content_body">
+        <div class="container">
+            <div class="sidebar">
+                <div>課程進度:</div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="course-progress" class="progress" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div>成績:</div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="exam-progress" class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="title">112-2 網頁資料庫</div>
+                <nav>
+                    <a href="#course" class="active">課程</a>
+                    <a href="#communication">考試/作業</a>
+                    <a href="#grades">成績</a>
+                </nav>
+                <hr>
+                <div id="course" class="tab-content active">
+                    <h2>課程</h2>
+                    <details>
+                        <summary>6/1</summary>
+                        <div class="file-item">
+                            <div>
+                                <span class="file-icon">📓</span>
+                                <a href="./web_pdf/case01_login system without and with database.pdf">001 login system
+                                    without and with database</a>
+                            </div>
+                            <div><button class="complete_btn">未完成</button></div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>6/2</summary>
+                        <div class="file-item">
+                            <div>
+                                <span class="file-icon">📓</span>
+                                <a href="./web_pdf/case02_upload files without database.pdf">002 upload files without
+                                    database</a>
+                            </div>
+                            <div><button class="complete_btn">未完成</button></div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>6/3</summary>
+                        <div class="file-item">
+                            <div>
+                                <span class="file-icon">📓</span>
+                                <a href="./web_pdf/case03_upload files with login system  (1).pdf">003 upload files with
+                                    login system</a>
+                            </div>
+                            <div><button class="complete_btn">未完成</button></div>
+                        </div>
+                    </details>
+                </div>
+                <div id="communication" class="tab-content">
+                    <h2 style="color: #628864;">考試</h2>
+                    <details>
+                        <summary>課堂考</summary>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="../html/test.html">第一次課堂小考</a>
+                            <div></div>
+                        </div>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="../html/test.html">第二次課堂小考</a>
+                        </div>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="../html/test.html">第三次課堂小考</a>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>期考</summary>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="../html/test.html">期中考</a>
+                        </div>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="../html/test.html">期末考</a>
+                        </div>
+                    </details>
+                    <h2 style="color: #628864;">作業</h2>
+                    <details>
+                        <summary>課堂檢測</summary>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="./test.html">6/1課堂作業</a>
+                        </div>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="./test.html">6/2課堂作業</a>
+                        </div>
+                        <div class="test_item">
+                            <span class="file-icon">📜</span>
+                            <a href="./test.html">6/3課堂作業</a>
+                        </div>
+                    </details>
+                </div>
+                <div id="grades" class="tab-content">
+
+                    <div class="score_content">
+                        <div class="course_names">
+                            <div class="sum_content header-row">
+                                <div>項目占比</div>
+                                <div>獲得該項占比權重</div>
+                                <div>分數</div>
+                                <div>全距</div>
+                                <div>獲得總成績占分</div>
+                            </div>
+                            <details class="section">
+                                <summary class="section-header">課堂出席表現(15%)</summary>
+                                <div class="sum_content">
+                                    <div>15%</div>
+                                    <div>50%</div>
+                                    <div>50分</div>
+                                    <div>100分</div>
+                                    <div>7.5%</div>
+                                </div>
+                            </details>
+                            <details class="section">
+                                <summary class="section-header">作業(20%)</summary>
+                                <div class="sum_content">
+                                    <div>20%</div>
+                                    <div>80%</div>
+                                    <div>-</div>
+                                    <div>-</div>
+                                    <div>16%</div>
+                                </div>
+                                <details>
+                                    <summary class="section-header rank1">作業一</summary>
+                                    <div class="sum_content">
+                                        <div>5%</div>
+                                        <div>90%</div>
+                                        <div>9分</div>
+                                        <div>10分</div>
+                                        <div>4.5%</div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="section-header rank1">作業二</summary>
+                                    <div class="sum_content">
+                                        <div>5%</div>
+                                        <div>70%</div>
+                                        <div>7分</div>
+                                        <div>10分</div>
+                                        <div>3.5%</div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="section-header rank1">作業三</summary>
+                                    <div class="sum_content">
+                                        <div>5%</div>
+                                        <div>80%</div>
+                                        <div>8分</div>
+                                        <div>10分</div>
+                                        <div>4%</div>
+                                    </div>
+                                </details>
+                            </details>
+                            <details class="section">
+                                <summary class="section-header">期中考(30%)</summary>
+                                <div class="sum_content">
+                                    <div>30%</div>
+                                    <div>85%</div>
+                                    <div>-</div>
+                                    <div>-</div>
+                                    <div>25.5%</div>
+                                </div>
+                                <details>
+                                    <summary class="section-header rank1">上機考(30%x50%)</summary>
+                                    <div class="sum_content">
+                                        <div>15%</div>
+                                        <div>90%</div>
+                                        <div>90分</div>
+                                        <div>100分</div>
+                                        <div>13.5%</div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="section-header rank1">筆試(30%x50%)</summary>
+                                    <div class="sum_content">
+                                        <div>15%</div>
+                                        <div>80%</div>
+                                        <div>80分</div>
+                                        <div>100分</div>
+                                        <div>12%</div>
+                                    </div>
+                                </details>
+                            </details>
+                            <details class="section">
+                                <summary class="section-header">期末考(35%)</summary>
+                                <div class="sum_content">
+                                    <div>35%</div>
+                                    <div>90%</div>
+                                    <div>-</div>
+                                    <div>-</div>
+                                    <div>31.5%</div>
+                                </div>
+                                <details>
+                                    <summary class="section-header rank1">上機考(35%x50%)</summary>
+                                    <div class="sum_content">
+                                        <div>17.5%</div>
+                                        <div>95%</div>
+                                        <div>95分</div>
+                                        <div>100分</div>
+                                        <div>16.625%</div>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary class="section-header rank1">筆試(35%x50%)</summary>
+                                    <div class="sum_content">
+                                        <div>17.5%</div>
+                                        <div>85%</div>
+                                        <div>85分</div>
+                                        <div>100分</div>
+                                        <div>14.875%</div>
+                                    </div>
+                                </details>
+                            </details>
+                            <div class="sum_content header-row">
+                                <div colspan="4">總成績</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>-</div>
+                                <div>80.5分</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/course_content.js"></script>
+</body>
+
+</html>

@@ -18,3 +18,38 @@ function Search_Default() {
     more_info.innerHTML = "查看更多";
     title_text.innerHTML = "最新上線";
 }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let currentIndex = 0;
+        const indicators = document.querySelectorAll('.indicator');
+        const totalIndicators = indicators.length;
+
+        function updateCarousel(index) {
+            const pictureControl = document.querySelector('.pictureControl');
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+            pictureControl.style.left = `-${index * 100}%`;
+        }
+
+        document.querySelector('.arrow.left').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalIndicators - 1 : currentIndex - 1;
+            updateCarousel(currentIndex);
+        });
+
+        document.querySelector('.arrow.right').addEventListener('click', () => {
+            currentIndex = (currentIndex === totalIndicators - 1) ? 0 : currentIndex + 1;
+            updateCarousel(currentIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel(currentIndex);
+            });
+        });
+
+
+        updateCarousel(currentIndex);
+    });

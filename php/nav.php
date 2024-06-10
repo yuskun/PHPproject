@@ -7,7 +7,13 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-
+$sql_user = "SELECT profile_picture FROM users WHERE id = ?";
+$stmt_user = $conn->prepare($sql_user);
+$stmt_user->bind_param("i", $user_id);
+$stmt_user->execute();
+$result_user = $stmt_user->get_result();
+$user = $result_user->fetch_assoc();
+$stmt_user->close();
 // 查询用户的所有通知
 $sql = "SELECT id, message FROM notifications WHERE user_id = ? ORDER BY created_at DESC";
 $stmt = $conn->prepare($sql);
@@ -139,7 +145,10 @@ $conn->close();
 
       </div>
 
-      <div class="userIcon"></div>
+      <div class="userIcon" style=" background-image:url(<?php echo htmlspecialchars($user['profile_picture'] ?: '../image/web_img.png'); ?>)">
+   
+</div>
+
     </div>
   </div>
 </body>

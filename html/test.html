@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料庫基礎測驗</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .question-container {
+            margin-top: 20px;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .options label {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            display: block;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            
+        }
+        
+        button:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border: solid 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>資料庫基礎測驗</h1>
+        <div class="question-container">
+            <div class="question">
+                <p class="question-text">資料庫管理系統 (DBMS) 的主要功能是什麼？</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> 管理數據和資料庫</label>
+                    <label><input type="radio" name="q1" value="B"> 管理操作系統</label>
+                    <label><input type="radio" name="q1" value="C"> 管理網絡安全</label>
+                    <label><input type="radio" name="q1" value="D"> 管理硬件設備</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">以下哪一個是關聯資料庫的主要概念？</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> 鍵值對</label>
+                    <label><input type="radio" name="q2" value="B"> 文檔存儲</label>
+                    <label><input type="radio" name="q2" value="C"> 表格</label>
+                    <label><input type="radio" name="q2" value="D"> 圖形</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">SQL 是什麼的縮寫？</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> Structured Query Language</label>
+                    <label><input type="radio" name="q3" value="B"> Simple Query Language</label>
+                    <label><input type="radio" name="q3" value="C"> Sequential Query Language</label>
+                    <label><input type="radio" name="q3" value="D"> Standard Query Language</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">在關聯資料庫中，表之間的關聯是通過什麼建立的？</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> 主鍵</label>
+                    <label><input type="radio" name="q4" value="B"> 外鍵</label>
+                    <label><input type="radio" name="q4" value="C"> 唯一鍵</label>
+                    <label><input type="radio" name="q4" value="D"> 值鍵</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">資料庫正規化的主要目的是什麼？</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> 儲存更多數據</label>
+                    <label><input type="radio" name="q5" value="B"> 減少數據冗餘</label>
+                    <label><input type="radio" name="q5" value="C"> 提高數據安全</label>
+                    <label><input type="radio" name="q5" value="D"> 增加數據冗餘</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">哪一個 SQL 語句用於從資料表中獲取數據？</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="A"> GET</label>
+                    <label><input type="radio" name="q6" value="B"> FETCH</label>
+                    <label><input type="radio" name="q6" value="C"> SELECT</label>
+                    <label><input type="radio" name="q6" value="D"> RETRIEVE</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">以下哪一個是資料庫索引的主要作用？</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="A"> 增加資料庫大小</label>
+                    <label><input type="radio" name="q7" value="B"> 減少資料庫大小</label>
+                    <label><input type="radio" name="q7" value="C"> 加快查詢速度</label>
+                    <label><input type="radio" name="q7" value="D"> 減慢查詢速度</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">哪一個 SQL 關鍵字用於更新資料表中的數據？</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="A"> MODIFY</label>
+                    <label><input type="radio" name="q8" value="B"> CHANGE</label>
+                    <label><input type="radio" name="q8" value="C"> UPDATE</label>
+                    <label><input type="radio" name="q8" value="D"> ALTER</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">哪一個 SQL 語句用於刪除資料表中的數據？</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="A"> REMOVE</label>
+                    <label><input type="radio" name="q9" value="B"> DELETE</label>
+                    <label><input type="radio" name="q9" value="C"> DROP</label>
+                    <label><input type="radio" name="q9" value="D"> ERASE</label>
+                </div>
+            </div>
+            <div class="question">
+                <p class="question-text">資料庫的 ACID 性質中的 "A" 代表什麼？</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="A"> 安全性 (Authorization)</label>
+                    <label><input type="radio" name="q10" value="B"> 原子性 (Atomicity)</label>
+                    <label><input type="radio" name="q10" value="C"> 可靠性 (Accountability)</label>
+                    <label><input type="radio" name="q10" value="D"> 一致性 (Agreement)</label>
+                </div>
+            </div>
+        </div>
+        <button onclick="submitQuiz()">提交</button>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const correctAnswers = {
+                q1: 'A',
+                q2: 'C',
+                q3: 'A',
+                q4: 'B',
+                q5: 'B',
+                q6: 'C',
+                q7: 'C',
+                q8: 'C',
+                q9: 'B',
+                q10: 'B'
+            };
+            
+            let score = 0;
+            
+            for (let question in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+            
+            alert(`測驗已提交！您的得分是：${score} / 10`);
+            window.location.href = "./course_content.html";
+        }
+    </script>
+</body>
+</html>

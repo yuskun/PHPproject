@@ -11,8 +11,8 @@
 }
 
 .img {
+    aspect-ratio: 1/1;
     width: 50%;
-    height: auto;
     border-radius: 50%;
     margin: 0 auto;
 }

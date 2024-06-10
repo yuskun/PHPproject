@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../css/Course_browser.css">
+    <script src="../js/Course_browser.js" defer></script>
+</head>
+<style>
+    .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.indicator-wrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: black;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    background-color: lightgrey;
+    margin-bottom: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.title_text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.more_info {
+    font-size: 14px;
+    color: blue;
+    cursor: pointer;
+}
+
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="carousel">
+            <button class="arrow left">&lt;</button>
+            <div class="carousel-inner">
+                <div class="carousel-item" style="background-color: aquamarine;">
+                </div>
+                <div class="carousel-item" style="background-color: rgb(62, 15, 39);">
+                </div>
+                <div class="carousel-item" style="background-color: rgb(47, 75, 66);">
+                </div>
+            </div>
+            <button class="arrow right">&gt;</button>
+        </div>
+        <div class="carousel-indicators">
+            <div class="indicator-wrapper">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const indicators = document.querySelectorAll('.indicator');
+    const totalIndicators = indicators.length;
+    const carouselInner = document.querySelector('.carousel-inner');
+
+    function updateCarousel(index) {
+        const offset = -index * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    document.querySelector('.arrow.left').addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? totalIndicators - 1 : currentIndex - 1;
+        updateCarousel(currentIndex);
+    });
+
+    document.querySelector('.arrow.right').addEventListener('click', () => {
+        currentIndex = (currentIndex === totalIndicators - 1) ? 0 : currentIndex + 1;
+        updateCarousel(currentIndex);
+    });
+
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel(currentIndex);
+        });
+    });
+
+    // Initial update to set the first indicator as active
+    updateCarousel(currentIndex);
+});
+
+</script>
+
+</html>

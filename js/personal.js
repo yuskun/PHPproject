@@ -47,6 +47,7 @@ function previewAvatar() {
    const reader = new FileReader();
    reader.onloadend = function () {
        document.getElementById('avatarImage').src = reader.result;
+       document.getElementById('profile_picture_base64').value = reader.result;
    }
    if (file) {
        reader.readAsDataURL(file);

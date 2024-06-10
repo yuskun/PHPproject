@@ -95,13 +95,13 @@ $conn->close();
     <ul>
     <?php if (empty($courses)): ?>
             <li>您目前沒有任何課程記錄。</li>
-            <li class="extra-li"></li> <!-- 用於保持排版 -->
+            <li class="extra-li"></li> 
         <?php else: ?>
             <?php foreach ($courses as $course): ?>
                 <li><a href="message.php?courseid=<?php echo $course['id']; ?>"><?php echo htmlspecialchars($course['course_name']); ?></a></li>
             <?php endforeach; ?>
             <?php if (count($courses) == 1): ?>
-                <li class="extra-li"></li> <!-- 用於保持排版 -->
+                <li class="extra-li"></li> 
             <?php endif; ?>
         <?php endif; ?>
     </ul>
